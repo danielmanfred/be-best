@@ -3,15 +3,17 @@ import { MongoClient } from "../../database/mongo";
 import { PersonRepository } from "./protocols";
 
 export class MongoPersonRepository implements PersonRepository {
-  async find(query: Partial<IPerson>): Promise<IPerson[]> {
+  async find(query: Partial<IPerson>): Promise<IPerson> {
     const person = await MongoClient.db
       .collection<IPerson>("persons")
-      .find(query);
+      .find(query)
+      .toArray();
 
-    return person;
+    return person[0];
   }
-  async create(person: IPerson): Promise<IPerson> {
+  async create(person: Omit<IPerson, "id">): Promise<IPerson> {
     return {
+      id: "abcdefghijlkmnopqrstuvyxwz",
       firstName: "Daniel",
       lastName: "Brito",
       phone: {
