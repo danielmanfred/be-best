@@ -4,5 +4,6 @@ export interface IPerson {
   id: string;
   firstName: string;
   lastName: string;
-  phone: IPhone;
+  phone: IPhone[];
+  createdAt: Date;
 }

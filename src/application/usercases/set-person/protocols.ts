@@ -1,6 +1,6 @@
-import { Person } from "../../../domain/entities/person";
 import { IPerson } from "../../../domain/models/person";
+import { CreateUserParams } from "../../controllers/set-person/protocols";
 
 export interface ISetPerson {
-  execute(person: IPerson): Promise<Person>;
+  execute(person: CreateUserParams): Promise<IPerson>;
 }
