@@ -1,4 +1,4 @@
-import { PersonRepository } from "../../src/application/repositories/person-repository";
+import { PersonRepository } from "../../src/application/repositories/person-repository/mongo-person-repository";
 import { Person } from "../../src/domain/entities/person";
 import { IPerson } from "../../src/domain/models/person";
 

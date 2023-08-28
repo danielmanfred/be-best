@@ -1,10 +1,11 @@
 import { IPerson } from "../../../domain/models/person";
-import { IGetPerson, IGetPersonRepository } from "./protocols";
+import { IGetPerson } from "./protocols";
+import { PersonRepository } from "../../repositories/person-repository/protocols";
 
 export class GetPerson implements IGetPerson {
-  constructor(private readonly getPersonRepository: IGetPersonRepository) {}
+  constructor(private readonly personRepository: PersonRepository) {}
 
   async execute(person: IPerson): Promise<IPerson> {
-    return await this.getPersonRepository.getPerson(person);
+    return await this.personRepository.find(person);
   }
 }

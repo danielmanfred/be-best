@@ -1,6 +1,6 @@
 import { Person } from "../../../domain/entities/person";
 import { IPerson } from "../../../domain/models/person";
-import { PersonRepository } from "../../repositories/person-repository";
+import { PersonRepository } from "../../repositories/person-repository/mongo-person-repository";
 import { ISetPerson } from "./protocols";
 
 export class SetPerson implements ISetPerson {

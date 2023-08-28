@@ -1,7 +1,7 @@
-import { Phone } from "../entities/phone";
+import { IPhone } from "./phone";
 
 export interface IPerson {
   firstName: string;
   lastName: string;
-  phone: Phone;
+  phone: IPhone;
 }

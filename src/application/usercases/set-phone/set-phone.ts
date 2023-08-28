@@ -1,6 +1,6 @@
 import { Phone } from "../../../domain/entities/phone";
 import { IPhone } from "../../../domain/models/phone";
-import { PhoneRepository } from "../../repositories/phone-repository";
+import { PhoneRepository } from "../../repositories/phone-repository/phone-repository";
 
 export class SetPhone {
   constructor(private phoneRepository: PhoneRepository) {}

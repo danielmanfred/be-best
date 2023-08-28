@@ -1,4 +1,4 @@
-import { PhoneRepository } from "../../src/application/repositories/phone-repository";
+import { PhoneRepository } from "../../src/application/repositories/phone-repository/phone-repository";
 import { Phone } from "../../src/domain/entities/phone";
 import { IPhone } from "../../src/domain/models/phone";
 
