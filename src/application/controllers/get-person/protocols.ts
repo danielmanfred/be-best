@@ -1,5 +1,5 @@
 import { IPerson } from "../../../domain/models/person";
-import { HttpResponse } from "../protocols";
+import { HttpResponse, HttpRequest } from "../protocols";
 
 export interface PersonRequest {
   firstName: string;
@@ -7,5 +7,7 @@ export interface PersonRequest {
 }
 
 export interface IGetPersonController {
-  handle(person: IPerson): Promise<HttpResponse<IPerson>>;
+  handle(
+    httpRequest: HttpRequest<PersonRequest>
+  ): Promise<HttpResponse<IPerson>>;
 }

@@ -1,5 +1,6 @@
 import { IPerson } from "../../../domain/models/person";
 import { IPhone } from "../../../domain/models/phone";
+import { HttpResponse, HttpRequest } from "../protocols";
 
 export interface CreateUserParams {
   firstName: string;
@@ -8,5 +9,7 @@ export interface CreateUserParams {
 }
 
 export interface ISetPersonController {
-  setPerson(): Promise<IPerson>;
+  handle(
+    httpRequest: HttpRequest<CreateUserParams>
+  ): Promise<HttpResponse<IPerson>>;
 }

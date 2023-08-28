@@ -1,15 +1,17 @@
 import { IPerson } from "../../../domain/models/person";
 import { IGetPerson } from "../../usercases/get-person/protocols";
-import { HttpResponse } from "../protocols";
+import { HttpResponse, HttpRequest } from "../protocols";
 import { IGetPersonController, PersonRequest } from "./protocols";
 
 export class GetPersonController implements IGetPersonController {
   constructor(private readonly getPerson: IGetPerson) {}
 
-  async handle(person: PersonRequest): Promise<HttpResponse<IPerson>> {
+  async handle(
+    httpRequest: HttpRequest<PersonRequest>
+  ): Promise<HttpResponse<IPerson>> {
     try {
-      const personFound = await this.getPerson.execute(person);
-      if (!personFound) {
+      const person = await this.getPerson.execute(httpRequest.body);
+      if (!person) {
         return {
           statusCode: 404,
           body: "Person not found",
@@ -18,7 +20,7 @@ export class GetPersonController implements IGetPersonController {
 
       return {
         statusCode: 200,
-        body: personFound,
+        body: person,
       };
     } catch (error) {
       return {
