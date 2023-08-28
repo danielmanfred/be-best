@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mongodb": "^5.8.1",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
