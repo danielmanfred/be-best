@@ -10,4 +10,8 @@ export abstract class Entity<T> {
     this._id = id ?? crypto.randomUUID();
     this.createdAt = new Date();
   }
+
+  get id() {
+    return this._id;
+  }
 }

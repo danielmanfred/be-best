@@ -1,11 +1,5 @@
 import { Entity } from "../../core/domain/entity";
-import { Phone } from "../entities/phone";
-
-interface IPerson {
-  firstName: string;
-  lastName: string;
-  phone: Phone;
-}
+import { IPerson } from "../models/person";
 
 export class Person extends Entity<IPerson> {
   private person: IPerson;

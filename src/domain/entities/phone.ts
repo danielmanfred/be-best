@@ -1,10 +1,5 @@
 import { Entity } from "../../core/domain/entity";
-
-interface IPhone {
-  code: string;
-  number: string;
-  cellphone: boolean;
-}
+import { IPhone } from "../models/phone";
 
 export class Phone extends Entity<IPhone> {
   private phone: IPhone;
