@@ -1,2 +1,2 @@
-# SejaBestTeste
-API REST usando Typescript, Node.js e Express
+# SejaBest
+API REST using Typescript, Node.js and Express
